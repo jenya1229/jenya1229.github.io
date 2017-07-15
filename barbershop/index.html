@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src="js/jquery-3.2.1.min.js" type="text/javascript">
+  </script>
+  <meta charset="utf-8">
+  <title>Барбер Шоп</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArgAAAP8AAAD/AAAArgAAAAAAAAAAAAAAAAAAAK4AAAD/AAAA/wAAAP8AAACuAAAAAwAAAAAAAAAAAAAArgAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArgAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAK4AAAAAAAAArgAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArgAAAMcAAAABAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAOMAAAAAAAAAAgAAAP8AAAAAAAAAAAAAAAAAAAAzAAAA/AAAAP8AAACuAAAACQAAAK4AAAD/AAAA/wAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AADDgwAAgAEAAAAAAABgBgAA8R8AAP//AAD//wAA//8AAA==" rel="icon" type="image/x-icon">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container-headr">
+      <nav class="main-navigation">
+        <ul class="enter">
+          <li>
+            <a class=" button-hover-heder" href="#">Главная</a>
+          </li>
+          <li>
+            <a class=" button-hover-heder" href="#">Информация</a>
+          </li>
+          <li>
+            <a class=" button-hover-heder" href="#">Новости</a>
+          </li>
+          <li>
+            <a class=" button-hover-heder" href="#">Прайс-лист</a>
+          </li>
+          <li>
+            <a class=" button-hover-heder" href="#">Магазин</a>
+          </li>
+          <li>
+            <a class=" button-hover-heder" href="#">Контакты</a>
+          </li>
+          <li style="list-style: none; display: inline">
+            <div class="login">
+              <a href="javascript:PopUpShow()">Вход</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="conteiner clearfix">
+    <div class="index-logo"><img alt="Барбершоп Бородинский" height="204" id="index-img" src="img/index-logo.png" width="368"></div>
+    <section class="features">
+      <div class="features-item">
+        <b class="features-name">Быстро</b>
+        <div class="square"></div>
+        <p class="text-features">Мы делаем свою работубыстро! Два часа пролетят незаметно и вы - счастливый обладатель стильной стрижки-минутки!</p>
+      </div>
+      <div class="features-item">
+        <b class="features-name">Круто</b>
+        <div class="square square1"></div>
+        <p class="text-features">Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола и кино! Во всяком случае внешне.</p>
+      </div>
+      <div class="features-item">
+        <b class="features-name">Дорого</b>
+        <div class="square"></div>
+        <p class="text-features">Наши мастера профессионалы своего дела и не могут стоить дешево. К тому же, разве цена не дает определенный статус?</p>
+      </div>
+    </section>
+    <div class="index-content">
+      <div class="index-content-left">
+        <h2 class="index-content-title">&nbsp;&nbsp;&nbsp;&nbsp;Новости</h2>
+        <ul class="news-preview">
+          <li>
+            <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропустить стаканчик во время стрижки<br>
+            <time datetime="2017-03-16">16 марта</time></p>
+          </li>
+          <li>
+            <p>B нашей команде пополнение, Борис "бритва" Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды<br>
+            <time datetime="2017-03-16">4 апреля</time></p><button class="btn all-news button-prew-next-hover">все новости</button>
+          </li>
+        </ul>
+      </div>
+      <div class="index-content-right">
+        <h2 class="index-content-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Фотогалерея</h2>
+        <div class="gallery">
+          <figure class="gallery-content">
+            <ul id="slides">
+              <li class=" class=text-features"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+            </ul>
+          </figure>
+          <div class="conteiner-prew-next-btn">
+            <button class="btn gallery-prev button-prew-next-hover controls" id="previous">Назад</button> <button class="btn gallery-next button-prew-next-hover controls" id="next">Вперед</button> <button class="controls" id="pause">Pause</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="index-content">
+      <div class="index-content-left">
+        <h2 class="index-content-title">&nbsp;Контактная информация</h2>
+        <ul class="news-preview">
+          <li>
+            <p>Барбершоп "Бородинский"<br>
+            Адрес: г Санкт-Петербург Б Конюшная Д 19/8.<br>
+            <br>
+            Телефон +7 (555) 555 55 55.</p>
+          </li>
+          <li>
+            <p>Время работы Пн-пт с 9:00-22:00 Сб-вс 10:00-19:00</p>
+            <div class="conteiner-feedback">
+              <button class=" map-buton btn-navigation button-prew-next-hover">Как проехать</button> <button class=" btn-feedback button-prew-next-hover">Обратная связь</button>
+            </div>
+            <div class="modal-content-map">
+             <div class="pin">Место на карте</div><a class="close-map"></a> <img alt="" class="map" height="500" src="" width="700"></div>
+          </li>
+        </ul><a class="" href="#"></a>
+      </div>
+      <div class="index-content-right">
+        <h2 class="index-content-title">Записаться</h2>
+        <p>Укажие желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+        <form action="https://echo.htmlacademy.ru" class="appoinent-form" method="post">
+          <input name="date" placeholder="Дата" type="text" value=""> <input name="date" placeholder="Время" type="text" value=""> <input name="date" placeholder="Ваше имя" type="text" value=""> <input name="phone" placeholder="Телефон" type="tel" value=""> <button class=" submit button-prew-next-hover" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="main-footer clearfix">
+    <div class="conteiner">
+      <section class="footer-contacts">
+        <p>Барбершоп Бородинский<br>
+        дрес: г Санкт-Петербург Б Конюшная Д 19/8.<br>
+        Телефон +7 (555) 555 55 55.</p>
+      </section>
+      <section class="footer-social">
+        <p class="footer-social-title">Давайте дружить!</p>
+      </section>
+      <section class="footer-copyright">
+        <p>Разработано:</p><a class="button button-hover-footer" href="https://vk.com/uiiuiiu">евгением</a>
+      </section>
+    </div>
+    <div class="social-section">
+      <div class="share">
+        <a class="social-btn social-btn-vk button-hover-footer" href="https://vk.com/uiiuiiu"></a> <a class="social-btn social-btn-fb button-hover-footer" href=""></a> <a class="social-btn social-btn-inst button-hover-footer" href=""></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js">
+  </script>
+  <div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+      <form action="" class=" appoinent-form-popap" method="post">
+        <h4>Личный кабинет</h4>
+        <p class="">Введите пожалуйста ваш логин и пароль</p><input placeholder="логин" type="login" value=""><br>
+        <input placeholder="пароль" type="password" value=""><br>
+        <label class="control checkbox"><input type="checkbox"> <span class="control-indicator"></span></label>
+        <p class="label-cehkbox"><label class="control checkbox">запомни меня</label></p>
+        <a class="restore" href="#">я забыл пароль !</a><br>
+        <button class=" buton-popap submit button-prew-next-hover" type="submit">Войти</button>
+      </form><a class="close" href="javascript:PopUpHide()"></a>
+    </div>
+  </div>
+  <script>
+     $(document).ready(function(){
+         //Скрыть PopUp при загрузке страницы    
+         PopUpHide();
+     });
+     //Функция отображения PopUp
+     function PopUpShow(){
+         $("#popup1").show();
+     }
+     //Функция скрытия PopUp
+     function PopUpHide(){
+         $("#popup1").hide();
+     }
+
+
+  var link = document.querySelector(".map-buton");
+  var popap = document.querySelector(".modal-content-map");
+
+  link.addEventListener("click", function(event){
+  event.preventDefault();
+  popap.classList.add("modal-content-map-show");
+
+  });
+
+  var clos_map = document.querySelector(".close-map");
+
+  clos_map.addEventListener("click", function(event){
+  event.preventDefault();
+  popap.classList.remove("modal-content-map-show");
+
+  });
+   
+  </script>
+</body>
+</html>
