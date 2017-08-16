@@ -33,8 +33,8 @@ img {
   width: 100%;
   height: 920px;
   opacity: 0.85;
-  background: url(/img/2.jpg) no-repeat, -webkit-gradient(linear, left bottom, left top, from(#5458cd), to(#ffffff));
-  background: url(/img/2.jpg) no-repeat, linear-gradient(to top, #5458cd, #ffffff);
+  background: url(../img/2.jpg) no-repeat, -webkit-gradient(linear, left bottom, left top, from(#5458cd), to(#ffffff));
+  background: url(../img/2.jpg) no-repeat, linear-gradient(to top, #5458cd, #ffffff);
   background-size: 100%;
   background-blend-mode: overlay;
 }
@@ -42,7 +42,7 @@ img {
 .header__secondary--img {
   width: 700px;
   height: 800px;
-  background: url(/img/img-1.png) no-repeat;
+  background: url(../img/img-1.png) no-repeat;
 }
 
 .mapalafest__rotate--text {
