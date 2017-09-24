@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Редактор визиток</title>
+</head>
+<body>
+<style type="text/css">
+	body{
+		background: #c1ccc9;
+		
+	}
+
+	#canvas{
+		margin-left:20%;
+		margin-top: 30px;
+	}
+</style>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript">
+		var cnv = document.getElementById('canvas');
+		var ctx = cnv.getContext('2d');
+		var width = 1100, height = 800;
+
+		cnv.width = width;
+		cnv.height = height;
+		cnv.style.backgroundColor = '#dbfff5';
+
+		ctx.fillStyle = '#d39585';
+		ctx.strokeStyle = '#85d38a';
+		ctx.lineWidth = 4;
+
+		var fillRect = function (x, y, w, h){
+			ctx.fillRect(x, y, w, h);
+		}
+
+		var strokeRect = function (x, y, w, h){
+			ctx.strokeRect(x, y, w, h);
+		}
+
+		var Rect = function (x, y, w, h){
+			this.x = x;
+			this.y = y;
+			this.w = w;
+			this.h = h;
+			this.selected = false;
+			
+		};
+
+		Rect.prototype = {
+			draw : function(){
+				fillRect(this.x, this.y, this.w, this.h);
+			},
+            
+
+            stroke : function(){
+				strokeRect(this.x, this.y, this.w, this.h);
+			},
+
+			select : function(){
+				this.selected = !this.selected;
+			}
+
+		};
+
+		var i = 0, rect = [];
+		for (; i < 5; i++){
+			rect.push(new Rect(100 + i * (150 + 10), 40, 150, 150) );
+		}
+
+		cnv.onclick = function(e) {
+           console.log(e);
+		};
+
+		setInterval(function () {
+         for (i in rect) {
+          rect[i].draw();
+
+          if (rect[i].selected)
+          rect[i].stroke();
+         }
+		}, 30);
+
+
+	</script>
+</body>
+</html>
