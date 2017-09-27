@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Редактор визиток</title>
+	<title>песочница</title>
 </head>
 <body>
+<h1>Таскай квадраты</h1>
+
 <style type="text/css">
 	body{
 		background: #c1ccc9;
 		
 	}
+
+  h1{
+  	float: right;
+  }
 
 
 
@@ -38,7 +44,7 @@
 
 		ctx.fillStyle = '#d39585';
 		ctx.strokeStyle = '#85d38a';
-		ctx.lineWidth = 8;
+		ctx.lineWidth = 2;
 
 		var fillRect = function (x, y, w, h){
 			ctx.fillRect(x, y, w, h);
@@ -74,8 +80,8 @@
 		};
 
 		var i = 0, rect = [];
-		for (; i < 5; i++){
-			rect.push(new Rect(200+ i * (150 + 10), 40, 150, 150) );
+		for (; i < 25; i++){
+			rect.push(new Rect(20+ i * (30 + 10), 20, 30, 30) );
 		}
 
 		
