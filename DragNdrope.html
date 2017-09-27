@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Редактор визиток</title>
+</head>
+<body>
+<style type="text/css">
+	body{
+		background: #c1ccc9;
+		
+	}
+
+
+
+	
+</style>
+<div class="wrap">
+	<canvas id="canvas"></canvas>
+</div>
+	<script type="text/javascript">
+
+       var mouse = {
+         x : 0,
+         y : 0,
+         down : false
+       };
+
+        var selected = false;
+
+		var cnv = document.getElementById('canvas');
+		var ctx = cnv.getContext('2d');
+		var width = 1100, height = 800;
+
+		cnv.width = width;
+		cnv.height = height;
+		cnv.style.backgroundColor = '#dbfff5';
+
+		ctx.fillStyle = '#d39585';
+		ctx.strokeStyle = '#85d38a';
+		ctx.lineWidth = 8;
+
+		var fillRect = function (x, y, w, h){
+			ctx.fillRect(x, y, w, h);
+		}
+
+		var strokeRect = function (x, y, w, h){
+			ctx.strokeRect(x, y, w, h);
+		}
+
+		var Rect = function (x, y, w, h){
+			this.x = x;
+			this.y = y;
+			this.w = w;
+			this.h = h;
+			this.selected = false;
+			
+		};
+
+		Rect.prototype = {
+			draw : function(){
+				ctx.fillRect(this.x, this.y, this.w, this.h);
+			},
+            
+
+            stroke : function(){
+				ctx.strokeRect(this.x, this.y, this.w, this.h);
+			},
+
+		};
+
+		var isCursorInRect = function (rect) {
+          return mouse.x > rect.x && mouse.x < rect.x + rect.w && mouse.y > rect.y && mouse.y < rect.y + rect.h;
+		};
+
+		var i = 0, rect = [];
+		for (; i < 5; i++){
+			rect.push(new Rect(200+ i * (150 + 10), 40, 150, 150) );
+		}
+
+		
+
+
+		setInterval(function () {
+			ctx.clearRect(0, 0, width, height);
+         for (i in rect) {
+          rect[i].draw();
+
+          if (isCursorInRect(rect[i])) {
+          	rect[i].stroke();
+          }
+          
+          if (selected) {
+          	selected.x = mouse.x - selected.w / 2;
+          	selected.y = mouse.y - selected.h / 2;
+          	selected.stroke();
+          }
+         
+         }
+		}, 30);
+        
+
+        window.onmousemove = function (e) {
+        	mouse.x = e.pageX;
+        	mouse.y = e.pageY;
+        };
+
+         window.onmousedown = function (e) {
+        	mouse.down = true;
+        	if (!selected) {
+        		var i;
+        	   for (i in rect) {
+                if (isCursorInRect(rect[i])) {
+          	     selected = rect[i];
+           }
+          }
+         }
+        };
+
+         window.onmouseup = function (e) {
+        	mouse.down = false;
+        	selected = false;
+        };
+
+
+
+	</script>
+</body>
+</html>
