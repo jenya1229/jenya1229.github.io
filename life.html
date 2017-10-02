@@ -113,11 +113,15 @@
 	     
 	}
 
+	var audio = new Audio(); // Создаём новый элемент Audio
+	audio.src = '111.mp3'; // Указываем путь к звуку "клика"
+
 	function soundClick() {
-		  var audio = new Audio(); // Создаём новый элемент Audio
-		  audio.src = '111.mp3'; // Указываем путь к звуку "клика"
-		  audio.autoplay = true; // Автоматически запускаем
-		}
+	    audio.pause();
+	    audio.play() ;
+	}
+
+start.addEventListener("click", soundClick);
 	
 
 
