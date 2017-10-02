@@ -42,6 +42,7 @@
 			<p>Раставте точки в квадрате, и нажмите старт</p>
 			<p>Количество циклов: <span id="count">0</span></p>
             <button id="start">Start</button>
+
 		</div>
 
 	<script type="text/javascript">
@@ -108,9 +109,15 @@
 	     count++;
 	     document.getElementById('count').innerHTML = count;
 	     timer = setTimeout(startLife, 300);
+
+	     
 	}
 
-	
+	function soundClick() {
+		  var audio = new Audio(); // Создаём новый элемент Audio
+		  audio.src = '111.mp3'; // Указываем путь к звуку "клика"
+		  audio.autoplay = true; // Автоматически запускаем
+		}
 	
 
 
@@ -124,7 +131,9 @@
 		else return i;
 	}
 
-	document.getElementById('start').onclick = startLife;
+	document.getElementById('start').onclick = startLife ;
+	start.addEventListener("click", soundClick); // Спасибо ещё раз!
+
 
 
 	</script>
