@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SortingBubble</title>
+</head>
+<style type="text/css">
+	div{
+		width: 100px;
+		height: 100px;
+		background: blue;
+		margin: 0 auto;
+		margin-top: 250px;
+	}
+
+	p{
+      color: red;
+      text-align: center;
+      font-size: 30px;
+      padding-top: 30px;
+	}
+
+	a{
+		padding: 10px 20px 10px 20px;
+		background: green;
+		color:white;
+		text-decoration: none;
+		width: 120px;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		display: block; 
+		margin-top: 30px;
+
+
+	}
+</style>
+
+<div>
+
+<p id="status"></p>
+</div>
+
+<a href="#" title="Очистить все" class="btn btn-primary" onclick="refresh()">Случайное число</a>
+	<script type="text/javascript">
+		function getRandomInt(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+      
+      document.getElementById('status').innerHTML = getRandomInt(1, 1000);
+
+      function refresh()
+    {
+        window.location.reload();
+    }
+
+	</script>
+	
+</body>
+</html>
