@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Фильтр</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+	<p>Поиск слов на JavaScript</p>
+<div class="wrap">
+	 <input id="search-input" type="text" placeholder="Поиск слов">
+	 <div id="items">
+	 	
+	 </div>
+</div>
+
+
+   <style type="text/css">
+        input {
+            font-size: 20px;
+		    background-color: transparent;
+		    outline: 0;
+		    border: 0;
+		    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+		    padding: 10px 20px;
+		    color: white;
+             font-family: 'Press Start 2P', cursive;
+		     }
+
+        input::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.5) !important; 
+      font-family: 'Press Start 2P', cursive;}
+
+		input:-moz-placeholder {
+		  color: rgba(255, 255, 255, 0.5) !important; 
+		font-family: 'Press Start 2P', cursive;}
+
+		input::-moz-placeholder {
+		  color: rgba(255, 255, 255, 0.5) !important;
+		  font-family: 'Press Start 2P', cursive; }
+
+		input:-ms-input-placeholder {
+		  color: rgba(255, 255, 255, 0.5) !important;
+		font-family: 'Press Start 2P', cursive;}
+
+
+   	 .wrap{
+	   	  width: 90%;
+		  max-width: 350px;
+		  min-width: 320px;
+		  text-align: center;
+		  margin: 0 auto; 
+		 
+
+   	 }
+
+   	 body {
+	  box-sizing: border-box;
+	  height: 100vh;
+	  background-color: #c0392b;
+	  background-image: linear-gradient(25deg, #4f95ff, #fc8f71);
+	  color: white;
+	  font-family: 'Press Start 2P', cursive;
+	  text-align: center;
+
+	   }
+
+	  p{
+	  	font-size: 30px;
+	  }
+
+
+   </style>
+
+   <script type="text/javascript">
+   	const items = [
+    "Love",
+    "bee",
+    "Дом",
+    "дерево",
+    "Улица",
+    "Пес",
+    "Dog",
+    "cat",
+    "Work",
+    "Men",
+    "Women",
+
+   	];
+
+   	const parent = document.getElementById("items"),
+   	      searchIn = document.getElementById("search-input");
+
+    searchIn.addEventListener("input", function(e){
+         const val = e.target.value.toLowerCase();
+         let newArr = items.filter(function(e){
+         return e.toLowerCase().match(val);
+         
+         });
+         renderItems(newArr, parent);
+       
+    });
+
+	  function renderItems(arr, parent) {
+	  	parent.innerHTML = "";
+	  	for (var i = 0; i < arr.length; i++) {
+	  		let el = document.createElement("p");
+	  		el.className = "item";
+	  		el.innerHTML = arr[i];
+	  		parent.appendChild(el);
+
+	  	}
+	  }
+
+  renderItems(items, parent)
+
+
+
+   </script>
+
+
+</body>
+</html>
