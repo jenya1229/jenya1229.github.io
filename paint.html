@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Рисовалка</title>
+</head>
+<body>
+  
+
+
+
+	 <canvas id="c1" >
+        
+     </canvas>
+
+     <script type="text/javascript">
+     	var canvasBody = document.getElementById("c1"),
+     	    canvas = canvasBody.getContext("2d"),
+
+     	    w = canvasBody.width = window.innerWidth,
+     	    h = canvasBody.height = window.innerHeight,
+
+
+     	    opts = {
+              radius:  30,
+              color:  "hsl(hue,100%,40%)"
+
+     	    },
+
+     	    tick = 0,
+     	    currentHue = 0,
+
+     	    painting = false;
+
+     	canvasBody.addEventListener("mousedown", function() {
+            painting = true;
+            console.log("Down");
+
+     	});
+
+
+     	canvasBody.addEventListener("mouseup", function() {
+            painting = false;
+            console.log("Up");
+
+     	});
+
+     	canvasBody.addEventListener("mousemove", function(e) {
+     		if (painting) {
+     			var posX = e.pageX,
+     			    posY = e.pageY;
+
+     			    ++tick;
+     			    if(!(tick%10)){
+     			    	if((currentHue !== 365)){
+     			    		currentHue++
+     			    	} else {
+     			    		currentHue = 0;
+     			    	}
+
+     			    	console.log("change");
+     			    }
+
+               currentColor = opts.color.replace("hue", currentHue);
+               canvas.fillStyle = currentColor;
+               canvas.beginPath();
+               canvas.arc(posX, posY, opts.radius, 0, Math.PI * 2);
+               canvas.fill();
+
+
+     		}
+     	})
+
+     </script>
+</body>
+</html>
