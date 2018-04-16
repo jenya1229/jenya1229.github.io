@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="angularModule">
+<head>
+<meta charset="utf-8">
+<title>Angular shop </title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+<div class="container"
+     ng-controller="ProductController">
+<div class="top-sec clearfix">
+     <h1>Console</h1>
+  <div class="cart-icon" id="cart">
+   <i class="material-icons md-48">shopping_cart</i>
+  
+  		<div class="cart">
+        <div class="cart-count">{{cartCount}}</div>
+			<div class="caption">
+				
+				<h3>Total : <span>${{getTotal()}}</span></h3>
+              <div class="empty">Your cart is empty</div>
+				<ol>
+					<li ng-repeat="item in cart">
+						<div class="thumb"><img src="{{item.product_image}}"></div>
+					<div class="caption-text"><h5>{{item.product_name}}  </h5>
+					<h6>${{item.product_price}}</h6></div>
+					<button ng-click="removeItem($index)">Remove</button></li><br>	
+				</ol>
+<!-- 				<div class="button checkout">Checkout</div> -->
+  
+			</div>
+		</div>
+  </div>
+   </div>
+<div class="product">
+	<ul class="clearfix">
+	<li ng-repeat="product in products" 
+      class="col-sm-3">
+			<div class="item-img">
+				<img src="{{product.product_image}}">
+			</div>
+			<div class="product-cnt">
+			<h2>{{product.product_name}}</h2>
+			<p>Price:${{product.product_price}}</p>
+			</div>
+			
+  
+			<button class="btn" ng-click="addTocart($index)" ng-disabled="product.disable">{{product.cart_btn}}</button>
+		</li>
+
+
+	</ul>
+</div>
+</div>
+
+<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

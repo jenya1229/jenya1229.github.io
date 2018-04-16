@@ -1,0 +1,211 @@
+.container{
+	width:100%;
+	margin:0 auto;
+	max-width:1200px;
+}
+body {
+      background: #F2C14E; /* Для браузеров, которые не поддерживают градиенты */
+      background: -webkit-linear-gradient(left, #F2C14E, #F78154); /* Для Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(left, #F2C14E, #F78154); /* Для Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(left, #F2C14E, #F78154); /* Для Firefox 3.6 - 15 */
+      background: linear-gradient(left, #F2C14E, #F78154); /* Стандартный синтаксис */
+}
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto; 
+}
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+.product ul{
+	list-style:none;
+}
+.product ul li{
+/* 	width:100%; */
+text-align: center;
+	float: left;
+	margin:0 0px 40px 0;
+    max-height:784px;
+    padding-right: 20px;
+}
+.top-sec{
+	 padding: 50px 50px 20px 50px;
+	 position:relative;
+}
+.cart{
+/* 	width:30%;
+    position: absolute;
+    top: 85px;
+    right: 0; */
+}
+.cart-icon {
+    float: right;
+    display:block;
+  position:relative;
+   
+}
+.shopping-cart-icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    background-size:cover;
+    background-position:left center;
+}
+h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 10px 0px;
+    padding: 4px 20px;
+    float: left;
+}
+.itemCount{
+	display:block;
+    cursor: pointer;
+}
+.item-img img{
+ 	min-height:340px;
+/* 	width: 325px;  */
+}
+.product ol li{
+	width:auto;
+}
+.product h2{
+	font-size:16px;
+	
+	padding:20px 0;
+	width:80%;
+}
+.product p{
+	font-size:14px;
+	font-style: italic;
+
+}
+.cart-count{
+    cursor: pointer;
+	 position:absolute;
+	 top: -10px;
+    right:-10px;
+    font-size: 18px;
+    color: #3c1731;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #0F88FF;
+    color: #fff;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+}
+.caption h3{
+    cursor: pointer;
+	text-align: right;
+    font-size: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 20px;
+}
+.caption h3 span {
+    cursor: pointer;
+	color:#0F88FF;
+}
+.caption{
+    cursor: pointer;
+	margin: 20px 0;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    background: white;
+    width: 320px;
+    border-radius: 3px;
+    padding: 20px;
+    z-index: 1;
+    display: none;
+}
+.caption:after {
+    bottom: 100%;
+    left: 89%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: white;
+    border-width: 8px;
+    margin-left: -8px;
+}
+.cart img{
+	width:50px;
+}
+.material-icons.md-48 { 
+    font-size: 48px; 
+    cursor: pointer; 
+}
+.caption-text{
+	display:inline-block;
+	vertical-align:middle;
+}
+.caption-text h5, .caption-text h6{
+	margin:0;
+}
+.caption-text h5{
+	font-size:16px;
+}
+.caption-text h6{
+	font-size:18px;
+}
+.cart ol{
+	display:inline-block;
+}
+.cart button{
+	background: transparent;
+    border: none;
+    font-size: 12px;
+    color: #0F88FF;
+    display:block;
+ }
+ .button{
+ 	background:#0F88FF;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    
+    font-size: 16px;
+    margin: 25px 0 15px 0;
+ }
+ .btn{
+ 	border: 1px solid #0F88FF;
+    padding: 4px 14px;
+    background-color: transparent;
+    color: #0F88FF;
+    margin: 0px 0 5px 0px;
+    font-weght: bold;
+    cursor: pointer;
+    
+    outline: none;
+    font-size: 12px;
+ }
+.empty{
+  text-align:center;
+}
+.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
